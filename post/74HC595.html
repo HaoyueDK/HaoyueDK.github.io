@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2023/01/22/pSJ1QYT.png">
 <meta property="article:published_time" content="2023-01-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-01-22T07:39:02.159Z">
+<meta property="article:modified_time" content="2023-01-22T07:41:34.839Z">
 <meta property="article:author" content="浩月当空">
 <meta property="article:tag" content="芯片">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-01-22 15:39:02'
+  postUpdate: '2023-01-22 15:41:34'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,13 +142,66 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s1.ax1x.com/2023/01/05/pSAFoF0.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2023/01/22/pSJ1QYT.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Haoyue</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">74HC595芯片使用说明</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-21T16:00:00.000Z" title="发表于 2023-01-22 00:00:00">2023-01-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-22T07:39:02.159Z" title="更新于 2023-01-22 15:39:02">2023-01-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/STM32%E5%8D%95%E7%89%87%E6%9C%BA/">STM32单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="74HC595芯片使用说明"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="74系列芯片简介"><a href="#74系列芯片简介" class="headerlink" title="74系列芯片简介"></a>74系列芯片简介</h3><p>74系列集成电路大致可分为6大类：<br>　　　　 74&amp;times;&amp;times;（标准型）；<br>　　　　 74LS&amp;times;&amp;times;（低功耗肖特基）；<br>　　　　 74S&amp;times;&amp;times;（肖特基）；<br>　　　　 74ALS&amp;times;&amp;times;（先进低功耗肖特基）；<br>　　　　 74AS&amp;times;&amp;times;（先进肖特基）；<br>　　　　 74F&amp;times;&amp;times;（高速）。</p>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s1.ax1x.com/2023/01/05/pSAFoF0.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2023/01/22/pSJ1QYT.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Haoyue</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">74HC595芯片使用说明</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-21T16:00:00.000Z" title="发表于 2023-01-22 00:00:00">2023-01-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-22T07:41:34.839Z" title="更新于 2023-01-22 15:41:34">2023-01-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/STM32%E5%8D%95%E7%89%87%E6%9C%BA/">STM32单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="74HC595芯片使用说明"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="74系列芯片简介"><a href="#74系列芯片简介" class="headerlink" title="74系列芯片简介"></a>74系列芯片简介</h3><p>74系列集成电路大致可分为6大类：<br>　　　　 74&amp;times;&amp;times;（标准型）；<br>　　　　 74LS&amp;times;&amp;times;（低功耗肖特基）；<br>　　　　 74S&amp;times;&amp;times;（肖特基）；<br>　　　　 74ALS&amp;times;&amp;times;（先进低功耗肖特基）；<br>　　　　 74AS&amp;times;&amp;times;（先进肖特基）；<br>　　　　 74F&amp;times;&amp;times;（高速）。</p>
 <p>近年来还出现了高速CMOS电路的74系列，该系列可分为3大类：<br>　　　　 HC为COMS工作电平；<br>　　　　 HCT为TTL工作电平，可与74LS系列互换使用；<br>　　　　 HCU适用于无缓冲级的CMOS电路。</p>
 <p>其中74HC系列是目前应用最为广泛的74系列芯片，应用广泛且价格低廉。74HC系列是高速CMOS标准逻辑电路系列，具有与74LS系列同等的工作度和CMOS 集成电路固有的低功耗及电源电压范围宽等特点。型号最后几位数字相同，表示电路的逻辑功能、管脚排列完全兼容。</p>
 <h3 id="74HC595的主要参数"><a href="#74HC595的主要参数" class="headerlink" title="74HC595的主要参数"></a>74HC595的主要参数</h3><p>74HC595是一个8位串行输入、并行输出的位移缓存器：并行输出为三态输出。在SCK的上升沿，串行数据由DS输入到内部的8位位移缓存器，并由Q7’输出，而并行输出则是在LCK的上升沿将在8位位移缓存器的数据存入到8位并行输出缓存器。当串行数据输入端OE的控制信号为低使能时，并行输出端的输出值等于并行输出缓存器所存储的值。</p>
 <p>简单来说，就是单片机的信号可以通过串行输入74HC595来实现并行输出，节约了单片机上珍贵的引脚资源。（相应的，也有一款芯片可以实现并行输入，串行输出，和595功能正相反，这个芯片就是74HC165）</p>
 <p><img src="https://s1.ax1x.com/2023/01/22/pSJ1lfU.png"></p>
-<p>符号 | 引脚 | 描述<br>— | ——— | ———<br>QA–QH | 第15脚，第1-7脚 | 8位并行数据输出<br>GND | 第8脚 | 地<br>SQH | 第9脚 | 串行数据输出<br>SCLR | 第10脚 | 主复位（低电平有效）<br>SH_CP、SCK | 第11脚 | 数据输入时钟线<br>ST_CP、RCK | 第12脚 | 输出存储器锁存时钟线<br>OE | 第13脚 | 输出有效（低电平有效）<br>SI | 第14脚 | 串行数据输入<br>VCC | 第16脚 | 电源</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>引脚</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>QA–QH</td>
+<td>第15脚，第1-7脚</td>
+<td>8位并行数据输出</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>第8脚</td>
+<td>地</td>
+</tr>
+<tr>
+<td>SQH</td>
+<td>第9脚</td>
+<td>串行数据输出</td>
+</tr>
+<tr>
+<td>SCLR</td>
+<td>第10脚</td>
+<td>主复位（低电平有效）</td>
+</tr>
+<tr>
+<td>SH_CP、SCK</td>
+<td>第11脚</td>
+<td>数据输入时钟线</td>
+</tr>
+<tr>
+<td>ST_CP、RCK</td>
+<td>第12脚</td>
+<td>输出存储器锁存时钟线</td>
+</tr>
+<tr>
+<td>OE</td>
+<td>第13脚</td>
+<td>输出有效（低电平有效）</td>
+</tr>
+<tr>
+<td>SI</td>
+<td>第14脚</td>
+<td>串行数据输入</td>
+</tr>
+<tr>
+<td>VCC</td>
+<td>第16脚</td>
+<td>电源</td>
+</tr>
+</tbody></table>
 <p>(不同批次芯片其引脚名称可能有变化，但位置功能不变)</p>
 <h3 id="74HC595的使用"><a href="#74HC595的使用" class="headerlink" title="74HC595的使用"></a>74HC595的使用</h3><p>首先将74HC595的SHCP、STCP、SI连接单片机的三个输出引脚，SCLR接VCC，OE接GND，QA-QH连接输出。<br>当SHCP波形处于上升沿时，芯片会读取SI引脚高低电平并将数据依次保存在储存器中，当数据输入完成后，给STCP一个上升沿，芯片就能把储存器中数据并行输出。</p>
 <p>595的数据来源只有这一个口，一次只能输入一个位，那么连续输入8次，就可以积攒为一个字节了。<br>假如，我们要将二进制数据0111 1111 输入到595的移位寄存器中，0111 1111 这个数据完全输入后是这样的</p>
