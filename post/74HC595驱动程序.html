@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>74HC595驱动 | Haoyue</title><meta name="author" content="浩月当空"><meta name="copyright" content="浩月当空"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include &quot;Device&#x2F;Include&#x2F;stm32f10x.h&quot;   &#x2F;&#x2F; Device header#include &quot;delay.h&quot;void Init_A0A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="74HC595驱动">
+<meta property="og:url" content="http://example.com/post/74HC595%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F.html">
+<meta property="og:site_name" content="Haoyue">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include &quot;Device&#x2F;Include&#x2F;stm32f10x.h&quot;   &#x2F;&#x2F; Device header#include &quot;delay.h&quot;void Init_A0A">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2023/01/05/pSAEFZd.jpg">
+<meta property="article:published_time" content="2023-03-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-08T05:47:30.570Z">
+<meta property="article:author" content="浩月当空">
+<meta property="article:tag" content="芯片">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2023/01/05/pSAEFZd.jpg"><link rel="shortcut icon" href="https://s1.ax1x.com/2023/01/05/pSAFTYV.png"><link rel="canonical" href="http://example.com/post/74HC595%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '74HC595驱动',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-08 13:47:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s1.ax1x.com/2023/01/05/pSAFoF0.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2023/01/05/pSAEFZd.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Haoyue</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">74HC595驱动</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-07T16:00:00.000Z" title="发表于 2023-03-08 00:00:00">2023-03-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-08T05:47:30.570Z" title="更新于 2023-03-08 13:47:30">2023-03-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/STM32%E5%8D%95%E7%89%87%E6%9C%BA/">STM32单片机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="74HC595驱动"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Device/Include/stm32f10x.h&quot;</span>   <span class="comment">// Device header</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;delay.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Init_A0A1A2</span><span class="params">()</span>	<span class="comment">//³õÊ¼»¯GPIOA0A1A2</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//¶¨ÒåÒ»¸öGPIO³õÊ¼»¯½á¹¹Ìå</span></span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//¿ªÆôÏà¹ØµÄGPIOÍâÉèÊ±ÖÓ</span></span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//ÅäÖÃ³õÊ¼»¯½á¹¹Ìå</span></span><br><span class="line">	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;		<span class="comment">//ÍÆÍìÊä³öÊÇMode_Out_PP</span></span><br><span class="line">	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2;</span><br><span class="line">	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	<span class="comment">//Òý½ÅËÙÂÊÎª50MHz</span></span><br><span class="line">	GPIO_Init(GPIOA, &amp;GPIO_InitStructure);				</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">GPIOA_Ctrl</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> GPIN , <span class="type">unsigned</span> <span class="type">char</span> Bool)</span><span class="comment">//·â×°GPIOAµÄÒý½ÅÊä³öº¯Êý£¬µÚÒ»¸ö±äÁ¿ÊäÈëÒª¿ØÖÆµÄÒý½Å£¬µÚ¶þ¸ö±äÁ¿ÊäÈë0Êä³öµÍµçÆ½£¬ÊäÈëÆäËûÊä³ö¸ßµçÆ½</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(Bool == <span class="number">0</span>)&#123;</span><br><span class="line">		GPIO_ResetBits(GPIOA , GPIN);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> GPIO_SetBits(GPIOA , GPIN);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//A0ÎªÊý¾ÝDS£¬A1ÎªSCK£¬A2ÎªRCK</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Op_74HC595</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> DataByte )</span><span class="comment">//DataByteÊÇ°ËÎ»¶þ½øÖÆÊý£¬×îµÍÎ»¿ØÖÆQ0£¬×î¸ßÎ»¿ØÖÆQ7</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">char</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)&#123;</span><br><span class="line">		GPIOA_Ctrl(GPIO_Pin_0 , DataByte &amp; (<span class="number">0x80</span> &gt;&gt; i));<span class="comment">//·Ö±ðÌáÈ¡DataByteµÄÃ¿Ò»Î»£¬i=0Ê±£¬Êý¾Ý×Ö½ÚÓë1000 0000°´Î»Óë¡­¡­</span></span><br><span class="line">		GPIO_SetBits(GPIOA , GPIO_Pin_1);</span><br><span class="line">		GPIO_ResetBits(GPIOA , GPIO_Pin_1);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//GPIO_SetBits(GPIOA , GPIO_Pin_2);</span></span><br><span class="line">	<span class="comment">//GPIO_ResetBits(GPIOA , GPIO_Pin_2);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Scan_Row_Neg</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> Frame_Row[<span class="number">8</span>])</span><span class="comment">//8*8¹²ÒõµãÕóÆÁ£¬ÐÐÉ¨ÃèÇý¶¯Ò»Ö¡£¬FrameÎªº¬°Ë¸ö×Ö½ÚµÄÊý×é£¬Ã¿Ò»¸ö×Ö½Ú´ú±íÒ»ÐÐledµÄ×´Ì¬</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">char</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)&#123;</span><br><span class="line">		Op_74HC595(<span class="number">0x01</span> &lt;&lt; i);</span><br><span class="line">		Op_74HC595(!Frame_Row[i]);</span><br><span class="line">		delay_ms(<span class="number">5</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	GPIO_SetBits(GPIOA , GPIO_Pin_2);</span><br><span class="line">	GPIO_ResetBits(GPIOA , GPIO_Pin_2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="tag_share"><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2023/01/05/pSAEFZd.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/IntelLabel.html"><img class="next-cover" src="https://cdn.wallpapersafari.com/90/24/uAhqrf.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">如何白嫖一张Intel官方贴纸</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/74HC595.html" title="74HC595芯片使用说明"><img class="cover" src="https://s1.ax1x.com/2023/01/22/pSJ1QYT.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-22</div><div class="title">74HC595芯片使用说明</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s1.ax1x.com/2023/01/05/pSAFoF0.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">浩月当空</div><div class="author-info__description">一个什么都想学点的人</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=p2mOZuoekn7vgrUB4RCbfTtS-WNoiQ7t&amp;noverify=0"><i class="fa-brands fa-qq"></i><span>联系我</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎联系我！<br />QQ:3583630940</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/74HC595%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F.html" title="74HC595驱动"><img src="https://s1.ax1x.com/2023/01/05/pSAEFZd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="74HC595驱动"/></a><div class="content"><a class="title" href="/post/74HC595%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F.html" title="74HC595驱动">74HC595驱动</a><time datetime="2023-03-07T16:00:00.000Z" title="发表于 2023-03-08 00:00:00">2023-03-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/IntelLabel.html" title="如何白嫖一张Intel官方贴纸"><img src="https://cdn.wallpapersafari.com/90/24/uAhqrf.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何白嫖一张Intel官方贴纸"/></a><div class="content"><a class="title" href="/post/IntelLabel.html" title="如何白嫖一张Intel官方贴纸">如何白嫖一张Intel官方贴纸</a><time datetime="2023-01-27T16:00:00.000Z" title="发表于 2023-01-28 00:00:00">2023-01-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/74HC595.html" title="74HC595芯片使用说明"><img src="https://s1.ax1x.com/2023/01/22/pSJ1QYT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="74HC595芯片使用说明"/></a><div class="content"><a class="title" href="/post/74HC595.html" title="74HC595芯片使用说明">74HC595芯片使用说明</a><time datetime="2023-01-21T16:00:00.000Z" title="发表于 2023-01-22 00:00:00">2023-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/%E7%A1%AB%E4%BB%A3%E4%B8%99%E9%85%AE%E7%9A%84%E5%90%88%E6%88%90.html" title="硫代丙酮——世界上最臭的化学物质之一"><img src="https://s1.ax1x.com/2023/01/13/pSK7rxH.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="硫代丙酮——世界上最臭的化学物质之一"/></a><div class="content"><a class="title" href="/post/%E7%A1%AB%E4%BB%A3%E4%B8%99%E9%85%AE%E7%9A%84%E5%90%88%E6%88%90.html" title="硫代丙酮——世界上最臭的化学物质之一">硫代丙酮——世界上最臭的化学物质之一</a><time datetime="2023-01-12T16:00:00.000Z" title="发表于 2023-01-13 00:00:00">2023-01-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/stm32(2).html" title="点灯计划——基于STM32单片机（2）频闪LED"><img src="https://s1.ax1x.com/2023/01/05/pSAZXIs.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="点灯计划——基于STM32单片机（2）频闪LED"/></a><div class="content"><a class="title" href="/post/stm32(2).html" title="点灯计划——基于STM32单片机（2）频闪LED">点灯计划——基于STM32单片机（2）频闪LED</a><time datetime="2023-01-05T16:00:00.000Z" title="发表于 2023-01-06 00:00:00">2023-01-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 浩月当空</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">做学问一定要严谨！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
