@@ -5,7 +5,7 @@ body {
 select{
 	cursor: url(TriangularLime/Hand.cur), pointer;
 }
-button,a:hover{
+button,a:hover,head , span{
 	cursor: url(TriangularLime/Hand.cur), pointer;
 }
 input{
@@ -19,4 +19,8 @@ code{
 }
 pre>code{
 	cursor: url(TriangularLime/Pin.cur), default;	
+}
+
+#nav #site-name, #nav .site-page{
+	cursor: url(TriangularLime/Hand.cur), pointer;
 }
