@@ -5296,3 +5296,10 @@ blockquote.pullquote.right {
     background: #1f1f1f;
   }
 }
+body {
+  background: url("757f630b-4572-4440-963d-5107156542dc.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+}

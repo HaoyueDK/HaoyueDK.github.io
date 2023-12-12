@@ -21,6 +21,10 @@ pre>code{
 	cursor: url(TriangularLime/Pin.cur), default;	
 }
 
-#nav #site-name, #nav .site-page{
+#nav #site-name, #page-header #scroll-down, #nav .site-page, time{
 	cursor: url(TriangularLime/Hand.cur), pointer;
+}
+
+#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .post-meta-date{
+	cursor: url(TriangularLime/Arrow.cur), default;
 }
